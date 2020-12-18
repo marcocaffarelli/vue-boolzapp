@@ -4,3 +4,47 @@
     padding: 0;
 }
 /* utility */
+.d_flex{
+    display: flex;
+}
+
+.container{
+    width: 1200px;
+    height: 90vh;
+    margin: auto; 
+    margin-top: 5vh;
+    background-color: red;
+}
+
+aside{
+    background-color: black;
+    height: 100%;
+    width: 35%;
+}
+.utente{
+    background-color: gold;
+    height: 15%;
+    width: 100%;
+}
+.notifiche{
+    background-color: purple;
+    height: 15%;
+    width: 100%;
+}
+div .chat{
+    background-color: yellow;
+    height: 100%;
+    width: 65%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.utente_chat{
+    background-color: blue;
+    height: 15%;
+    width: 100%;
+}
+.messaggio{
+    background-color: lightblue;
+    height: 15%;
+    width: 100%;
+}
