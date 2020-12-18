@@ -61,10 +61,12 @@
                         </aside>
                         <!-- /aside -->
 
-                        <div class="chat d_flex">
-
+                        <div class="chat_container d_flex">
                             <div class="utente_chat_container">
                                 <div class="utente_chat d_flex" v-for="contatto in chatAttiva"><span class=" contatto_accesso d_flex"><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""><div class="d_flex"><h3>{{contatto.name}}</h3><span>Ultimo accesso oggi alle</span></div></span><span><i class="fas fa-search"></i><i class="fas fa-paperclip"></i> <i class="fas fa-ellipsis-v"></i></span></div>
+                            </div>
+                            <div class="chat" v-for="messaggio in messaggi">
+                                {{messaggio.messages}}
                             </div>
                             <div class="messaggio d_flex">
                                 <i class="far fa-smile"></i>

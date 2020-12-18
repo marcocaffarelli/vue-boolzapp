@@ -113,7 +113,7 @@ li> img{
 }
 
 /***************************CHAT***************************/
-div .chat{
+div .chat_container{
     background-image: url(../img/mine.jpg);
     height: 100%;
     width: 65%;
@@ -141,6 +141,10 @@ div .chat{
 }
 .contatto_accesso div span{
     color: grey;
+}
+.chat{
+    height:70%;
+    overflow-y: scroll;
 }
 .messaggio{
     background-color: rgb(234,234,234);

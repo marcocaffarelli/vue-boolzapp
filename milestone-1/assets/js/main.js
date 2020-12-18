@@ -157,6 +157,9 @@ let app = new Vue({
         chatAttiva: [
 
         ],
+        messaggi:[
+
+        ],
     },
  
     methods:{
@@ -164,6 +167,7 @@ let app = new Vue({
            this.chatAttiva.splice(0,1,contatto)
            //console.log(this.chatAttiva);
            //console.log(contatto);
+           this.messaggi.splice(0,1,contatto)
         }
     }
 });
