@@ -16,21 +16,44 @@
     background-color: red;
 }
 
+/***************************ASIDE***************************/
 aside{
     background-color: black;
     height: 100%;
     width: 35%;
 }
 .utente{
-    background-color: gold;
+    background-color: rgb(234,234,234);
     height: 15%;
     width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 1px solid grey;
+}
+img{
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 10px ;
+}
+.utente_left{
+    height: 100%;
+    align-items: center;
+}
+.utente > div > i{
+    font-size: 30px;
+    margin: 0 10px;
+    color: grey;
+}
+.utente > div > i:last-child{
+    margin-right: 30px;
 }
 .notifiche{
     background-color: purple;
     height: 15%;
     width: 100%;
 }
+
+/***************************CHAT***************************/
 div .chat{
     background-color: yellow;
     height: 100%;
