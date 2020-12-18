@@ -23,8 +23,8 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Fabio',
                 avatar: '_2',
                 visible: true,
@@ -45,8 +45,8 @@ let app = new Vue({
                 status: 'sent'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Samuele',
                 avatar: '_3',
                 visible: true,
@@ -67,8 +67,8 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Luigi',
                 avatar: '_4',
                 visible: true,
@@ -84,8 +84,8 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Richard',
                 avatar: '_5',
                 visible: true,
@@ -101,8 +101,8 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Vanessa',
                 avatar: '_6',
                 visible: true,
@@ -118,8 +118,8 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Augusto',
                 avatar: '_8',
                 visible: true,
@@ -135,8 +135,8 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
-                {
+            },
+            {
                 name: 'Marta',
                 avatar: '_io',
                 visible: true,
@@ -152,8 +152,18 @@ let app = new Vue({
                 status: 'received'
                 }
                 ],
-                },
+            },
+        ],
+        chatAttiva: [
+
         ],
     },
  
+    methods:{
+        avviaChat(contatto){
+           this.chatAttiva.splice(0,1,contatto)
+           //console.log(this.chatAttiva);
+           //console.log(contatto);
+        }
+    }
 });
