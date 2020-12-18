@@ -13,12 +13,10 @@
     height: 90vh;
     margin: auto; 
     margin-top: 5vh;
-    background-color: red;
 }
 
 /***************************ASIDE***************************/
 aside{
-    background-color: black;
     height: 100%;
     width: 35%;
 }
@@ -94,6 +92,13 @@ input{
     border: none;
     width: 80%;
     font-size: 16px;
+}
+li{
+    height: 100px;
+    width: 100%;
+    list-style: none;
+    background-color: white;
+    border-bottom: ligthgrey;
 }
 
 /***************************CHAT***************************/
