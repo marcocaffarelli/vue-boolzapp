@@ -69,7 +69,7 @@ let app = new Vue({
                 ],
                 },
                 {
-                name: 'Luisa',
+                name: 'Luigi',
                 avatar: '_4',
                 visible: true,
                 messages: [
@@ -81,6 +81,74 @@ let app = new Vue({
                 {
                 date: '10/01/2020 15:50:00',
                 text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+                }
+                ],
+                },
+                {
+                name: 'Richard',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                {
+                date: '10/01/2020 15:30:55',
+                text: 'Speriamo smetta di nevicare',
+                status: 'sent'
+                },
+                {
+                date: '10/01/2020 15:50:00',
+                text: 'Se fosse per me farei nevicare sempre',
+                status: 'received'
+                }
+                ],
+                },
+                {
+                name: 'Vanessa',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                {
+                date: '10/01/2020 15:30:55',
+                text: 'Cosa possiamo regalare a Chiara?',
+                status: 'sent'
+                },
+                {
+                date: '10/01/2020 15:50:00',
+                text: 'Non lo so',
+                status: 'received'
+                }
+                ],
+                },
+                {
+                name: 'Augusto',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                {
+                date: '10/01/2020 15:30:55',
+                text: 'Noooo!!! Come hai fatto a sbagliare?',
+                status: 'sent'
+                },
+                {
+                date: '10/01/2020 15:50:00',
+                text: 'Avevo capito male :(',
+                status: 'received'
+                }
+                ],
+                },
+                {
+                name: 'Marta',
+                avatar: '_io',
+                visible: true,
+                messages: [
+                {
+                date: '10/01/2020 15:30:55',
+                text: 'Come va?',
+                status: 'sent'
+                },
+                {
+                date: '10/01/2020 15:50:00',
+                text: 'Va',
                 status: 'received'
                 }
                 ],

@@ -53,7 +53,7 @@
                             <!-- contatti -->
                             <div class="contatti">
                                 <ul>
-                                    <li v-for="contatto in contatti">{{contatto.name}}</li>
+                                    <li v-for="contatto in contatti"><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}</li>
                                 </ul>
                             </div>
                             <!-- /contatti -->

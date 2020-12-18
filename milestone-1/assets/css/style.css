@@ -93,12 +93,24 @@ input{
     width: 80%;
     font-size: 16px;
 }
+
+/* contatti */
+.contatti{
+    max-height:62%;
+    overflow-y: scroll;
+}
 li{
     height: 100px;
     width: 100%;
     list-style: none;
     background-color: white;
-    border-bottom: ligthgrey;
+    border-bottom: 1px solid lightgrey;
+    padding-top: 15px;
+    font-size: 20px;
+}
+li> img{
+    vertical-align: top;
+    margin-right: 20px;
 }
 
 /***************************CHAT***************************/
