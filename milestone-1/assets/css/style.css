@@ -31,7 +31,7 @@ aside{
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    border-right: 1px solid grey;
+    border-right: 1px solid lightgrey;
 }
 img{
     height: 70px;
@@ -45,10 +45,13 @@ img{
 .utente > div > i{
     font-size: 30px;
     margin: 0 10px;
-    color: grey;
 }
 .utente > div > i:last-child{
     margin-right: 30px;
+}
+
+i{
+    color: grey;
 }
 
 /* notifiche */
@@ -84,30 +87,41 @@ img{
     align-items: center;
     box-shadow: 1px 1px 1px 0px lightgrey;
 }
-.input i{
-    color: grey;
+.input input{
+    text-align: center;
 }
 input{
     border: none;
-    text-align: center;
     width: 80%;
+    font-size: 16px;
 }
 
 /***************************CHAT***************************/
 div .chat{
-    background-color: yellow;
+    background-image: url(../img/mine.jpg);
     height: 100%;
     width: 65%;
     flex-direction: column;
     justify-content: space-between;
 }
 .utente_chat{
-    background-color: blue;
+    background-color: rgb(234,234,234);
     height: 15%;
     width: 100%;
 }
 .messaggio{
-    background-color: lightblue;
+    background-color: rgb(234,234,234);
     height: 15%;
     width: 100%;
+    border-left: 1px solid lightgrey;
+    justify-content: space-around;
+    align-items: center;
+}
+.messaggio input{
+    height: 80%;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.messaggio i{
+    font-size: 30px;
 }
