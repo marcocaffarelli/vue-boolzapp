@@ -91,12 +91,12 @@ let app = new Vue({
                 visible: true,
                 messages: [
                 {
-                date: '10/01/2020 15:30:55',
+                date: '10/03/2020 15:30:56',
                 text: 'Speriamo smetta di nevicare',
                 status: 'sent'
                 },
                 {
-                date: '10/01/2020 15:50:00',
+                date: '10/03/2020 15:50:01',
                 text: 'Se fosse per me farei nevicare sempre',
                 status: 'received'
                 }
