@@ -76,8 +76,10 @@
                             </div>
                             <div class="chat">
                                 <div v-for="(contatto,index) in chatAttiva">
-                                    <div class="inviato" v-for="messaggio in contatto.messages" v-if="messaggio.status === 'sent'">{{messaggio.text}}</div>
-                                    <div class="ricevuto" v-for="messaggio in contatto.messages" v-if="messaggio.status === 'received'">{{messaggio.text}}</div>
+                                    <template v-for="messaggio in contatto.messages">
+                                    <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}}<br><div class="data">{{messaggio.date}}</div></div>
+                                    <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<br><div class="data">{{messaggio.date}}</div></div>
+                                </template>
                                 </div>
                             </div>
                             <div class="messaggio d_flex">
