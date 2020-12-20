@@ -163,3 +163,9 @@ div .chat_container{
 .messaggio i{
     font-size: 30px;
 }
+.inviato{
+    background-color: white;
+}
+.ricevuto{
+    background-color: yellowgreen;
+}
