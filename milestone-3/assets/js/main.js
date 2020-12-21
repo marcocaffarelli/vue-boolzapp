@@ -169,8 +169,9 @@ let app = new Vue({
 
         ],
         nuovoMes: "",
+
     },
- 
+    
     methods:{
         avviaChat(contatto){
            this.chatAttiva.splice(0,1,contatto);
@@ -179,7 +180,7 @@ let app = new Vue({
         },
 
         invia(){
-            this.chatAttiva[3].push({text:this.nuovoMes}), this.nuovoMes= "";
+            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent'}), this.nuovoMes= "";
         }
     }
 });
