@@ -166,15 +166,6 @@ let app = new Vue({
         nuovoMes: "",
 
     },
-    created: function(){
-        if(this.chatAttiva[0].messages.length ++){
-
-            setTimeout(this.rispondi, 1000)
-        }    
-        
-    
-      },
-       
     
     methods:{
         avviaChat(contatto){
@@ -185,6 +176,7 @@ let app = new Vue({
 
         invia(){
             this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(new Date())}), this.nuovoMes= "";
+            setTimeout(this.rispondi, 1000)
         },
         rispondi(){
             this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(new Date())});   
