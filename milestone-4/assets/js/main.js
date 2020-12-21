@@ -164,8 +164,11 @@ let app = new Vue({
         ],
         nuovoMes: "",
 
+        cercaNome:"",
+
     },
     
+
     methods:{
         avviaChat(contatto){
            this.chatAttiva.splice(0,1,contatto);
