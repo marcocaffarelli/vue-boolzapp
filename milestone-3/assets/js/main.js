@@ -3,11 +3,6 @@
 // “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 // ● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
 // un “ok” come risposta, che apparirà dopo 1 secondo.
-// Milestone 3
-// ● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
-// “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// ● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
-// un “ok” come risposta, che apparirà dopo 1 secondo.
 
 let app = new Vue({
     el: "#app", 
@@ -171,6 +166,15 @@ let app = new Vue({
         nuovoMes: "",
 
     },
+    created: function(){
+        if(this.chatAttiva[0].messages.length ++){
+
+            setTimeout(this.rispondi, 1000)
+        }    
+        
+    
+      },
+       
     
     methods:{
         avviaChat(contatto){
@@ -182,6 +186,9 @@ let app = new Vue({
         invia(){
             this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(new Date())}), this.nuovoMes= "";
         },
+        rispondi(){
+            this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(new Date())});   
+        }
 
     }
 });
