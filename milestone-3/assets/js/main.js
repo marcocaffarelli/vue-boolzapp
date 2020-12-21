@@ -180,7 +180,8 @@ let app = new Vue({
         },
 
         invia(){
-            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent'}), this.nuovoMes= "";
-        }
+            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(new Date())}), this.nuovoMes= "";
+        },
+
     }
 });

@@ -80,7 +80,7 @@
                                         <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}}<br><div class="data">{{messaggio.date}}</div></div>
                                         <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<br><div class="data">{{messaggio.date}}</div></div>
                                     </template>
-                                    <div class="inviato">{{nuovoMes.text}}</div>
+                                    {{nuovoMes.text}}
                                 </div>
                             </div>
                             <div class="messaggio d_flex">
