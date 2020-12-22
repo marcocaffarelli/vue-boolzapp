@@ -177,11 +177,11 @@ let app = new Vue({
         },
 
         invia(){
-            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(new Date())}), this.nuovoMes= "";
+            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(`${dayjs().format('DD/MM/YYYY')} ${dayjs().format('H/mm/ss')}`)}), this.nuovoMes= "";
             setTimeout(this.rispondi, 1000)
         },
         rispondi(){
-            this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(new Date())});   
+            this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(`${dayjs().format('DD/MM/YYYY')} ${dayjs().format('H/mm/ss')}`)});   
         },
         ricerca(){
             this.contatti.forEach(element => {
