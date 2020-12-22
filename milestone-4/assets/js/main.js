@@ -182,7 +182,14 @@ let app = new Vue({
         },
         rispondi(){
             this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(new Date())});   
-        }
+        },
+        ricerca(){
+            for (let index = 0; index < this.contatti.length; index++) {
+                if( this.contatti[index].name.includes(this.cercaNome)){
+                return console.log(true);     
+                }
+            }
 
+        }
     }
 });

@@ -45,7 +45,7 @@
                             <div class="input_container d_flex">
                                 <div class="input d_flex">
                                     <i class="fas fa-search"></i>
-                                    <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="cercaNome">
+                                    <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="cercaNome" @keyup="ricerca">
                                 </div>
                             </div>
                             <!-- /input -->
