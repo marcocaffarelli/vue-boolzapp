@@ -106,6 +106,7 @@ input{
 .contatti{
     max-height:62%;
     overflow-y: scroll;
+    background-color:white;
 }
 li{
     height: 100px;
