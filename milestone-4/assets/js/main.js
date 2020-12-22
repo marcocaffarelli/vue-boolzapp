@@ -7,7 +7,7 @@ let app = new Vue({
     el: "#app", 
     data:{
         contatti: [
-            {
+           {
                 name: 'Michele',
                 avatar: '_1',
                 visible: true,
@@ -96,12 +96,12 @@ let app = new Vue({
                 visible: true,
                 messages: [
                 {
-                date: '10/03/2020 15:30:56',
+                date: '18/05/2020 16:40:56',
                 text: 'Speriamo smetta di nevicare',
                 status: 'sent'
                 },
                 {
-                date: '10/03/2020 15:50:01',
+                date: '18/05/2020 16:45:01',
                 text: 'Se fosse per me farei nevicare sempre',
                 status: 'received'
                 }
@@ -113,12 +113,12 @@ let app = new Vue({
                 visible: true,
                 messages: [
                 {
-                date: '10/01/2020 15:30:55',
+                date: '07/09/2020 00:00:05',
                 text: 'Cosa possiamo regalare a Chiara?',
                 status: 'sent'
                 },
                 {
-                date: '10/01/2020 15:50:00',
+                date: '08/09/2020 04:12:34',
                 text: 'Non lo so',
                 status: 'received'
                 }
@@ -130,12 +130,12 @@ let app = new Vue({
                 visible: true,
                 messages: [
                 {
-                date: '10/01/2020 15:30:55',
+                date: '10/12/2020 16:48:55',
                 text: 'Noooo!!! Come hai fatto a sbagliare?',
                 status: 'sent'
                 },
                 {
-                date: '10/01/2020 15:50:00',
+                date: '10/12/2020 17:05:08',
                 text: 'Avevo capito male :(',
                 status: 'received'
                 }
@@ -147,18 +147,19 @@ let app = new Vue({
                 visible: true,
                 messages: [
                 {
-                date: '10/01/2020 15:30:55',
+                date: '13/12/2020 23:22:25',
                 text: 'Come va?',
                 status: 'sent'
                 },
                 {
-                date: '10/01/2020 15:50:00',
+                date: '13/12/2020 23:59:59',
                 text: 'Va',
                 status: 'received'
                 }
                 ],
             },
         ],
+
         chatAttiva: [
 
         ],
@@ -177,11 +178,11 @@ let app = new Vue({
         },
 
         invia(){
-            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(new Date())}), this.nuovoMes= "";
+            this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(`${dayjs().format('DD/MM/YYYY')} ${dayjs().format('H:mm:ss')}`)}), this.nuovoMes= "";
             setTimeout(this.rispondi, 1000)
         },
         rispondi(){
-            this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(new Date())});   
+            this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(`${dayjs().format('DD/MM/YYYY')} ${dayjs().format('H:mm:ss')}`)});   
         },
         ricerca(){
             this.contatti.forEach(element => {
