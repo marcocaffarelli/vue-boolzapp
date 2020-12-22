@@ -184,12 +184,15 @@ let app = new Vue({
             this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(new Date())});   
         },
         ricerca(){
-            for (let index = 0; index < this.contatti.length; index++) {
-                if( this.contatti[index].name.includes(this.cercaNome)){
-                return console.log(true);     
+            this.contatti.forEach(element => {
+                //console.log(element);
+                if(element.name.toLowerCase().includes(this.cercaNome.toLowerCase())){
+                    element.visible = true
+                }else{
+                    element.visible = false 
                 }
-            }
-
+                //console.log(element.name.includes(this.cercaNome));
+            });
         }
     }
 });

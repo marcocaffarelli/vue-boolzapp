@@ -53,7 +53,7 @@
                             <!-- contatti -->
                             <div class="contatti">
                                 <ul>
-                                    <li v-for="(contatto, index) in contatti" @click="avviaChat(contatto)" ><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}</li>
+                                    <li v-for="(contatto, index) in contatti" @click="avviaChat(contatto)" v-if="contatto.visible"><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}</li>
                                 </ul>
                             </div>
                             <!-- /contatti -->
