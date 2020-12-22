@@ -53,7 +53,7 @@
                             <!-- contatti -->
                             <div class="contatti">
                                 <ul>
-                                    <li v-for="(contatto, index) in contatti" @click="avviaChat(contatto)" v-if="contatto.visible"><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}</li>
+                                    <li v-for="(contatto, index) in contatti" @click="avviaChat(contatto)" v-if="contatto.visible"><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}<div class="ultimo" v-for="(messaggio, index) in contatto.messages" v-if="index == (contatto.messages.length -1)">{{messaggio.text}} <div>{{messaggio.date}}</div></div></li>
                                 </ul>
                             </div>
                             <!-- /contatti -->
@@ -68,7 +68,7 @@
                                         <img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt="">
                                         <div class="d_flex">
                                             <h3>{{contatto.name}}</h3>
-                                            <span>Ultimo accesso oggi alle</span>
+                                            <span v-for="(messaggio, index) in contatto.messages" v-if="index == (contatto.messages.length -1)">Ultimo accesso {{messaggio.date}}</span>
                                         </div>
                                     </span>
                                     <span><i class="fas fa-search"></i><i class="fas fa-paperclip"></i> <i class="fas fa-ellipsis-v"></i></span>
@@ -78,7 +78,7 @@
                                 <div v-for="contatto in chatAttiva">
                                     <template v-for="(messaggio,index) in contatto.messages">
                                         <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}} <i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div>
-                                        <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div>
+                                        <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div><br>
                                     </template>
                                     {{nuovoMes.text}}
                                 </div>
