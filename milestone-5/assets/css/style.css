@@ -1,0 +1,212 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* utility */
+.d_flex{
+    display: flex;
+}
+
+.container{
+    width: 1200px;
+    height: 90vh;
+    margin: auto; 
+    margin-top: 5vh;
+}
+
+/***************************ASIDE***************************/
+aside{
+    height: 100%;
+    width: 35%;
+}
+
+/* utente */
+
+.utente{
+    background-color: rgb(234,234,234);
+    height: 15%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 1px solid lightgrey;
+}
+img{
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 10px ;
+}
+.utente_left{
+    height: 100%;
+    align-items: center;
+}
+.utente > div > i, .utente_chat span i{
+    font-size: 30px;
+    margin: 0 10px;
+}
+.utente > div > i:last-child, .utente_chat span i:last-child{
+    margin-right: 30px;
+}
+i{
+    color: grey;
+}
+
+/* notifiche */
+
+.notifiche{
+    background-color:rgb(142, 218, 252);
+    height: 15%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.notifiche i{
+    font-size: 30px;
+    padding: 12px 10px;
+    color: rgb(142, 218, 252);
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+/* input */
+.input_container{
+    height: 8%;
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    width: 90%;
+    height: 70%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 1px 0px lightgrey;
+}
+.input input{
+    text-align: center;
+    height: 100%;
+    position: relative;
+    left: 30px;
+}
+input{
+    border: none;
+    width: 80%;
+    font-size: 16px;
+}
+
+/* contatti */
+.contatti{
+    max-height:62%;
+    overflow-y: scroll;
+}
+li{
+    height: 100px;
+    width: 100%;
+    list-style: none;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    padding-top: 15px;
+    font-size: 20px;
+}
+li:hover{
+    background-color: rgb(247, 247, 247);
+}
+li> img{
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+/***************************CHAT***************************/
+div .chat_container{
+    background-image: url(../img/mine.jpg);
+    height: 100%;
+    width: 65%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.utente_chat_container{
+    background-color: rgb(234,234,234);
+    height: 15%;
+    width: 100%;
+}
+.utente_chat{
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.contatto_accesso{
+    align-items: center;
+}
+.contatto_accesso img{
+    margin: 0 10px;
+}
+.contatto_accesso div{
+    flex-direction: column;
+}
+.contatto_accesso div span{
+    color: grey;
+}
+.chat{
+    height:70%;
+    width: 100%;
+    overflow-y: scroll;
+    position:relative;
+}
+.messaggio{
+    background-color: rgb(234,234,234);
+    height: 15%;
+    width: 100%;
+    border-left: 1px solid lightgrey;
+    justify-content: space-around;
+    align-items: center;
+}
+.messaggio input{
+    height: 80%;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.messaggio i{
+    font-size: 30px;
+}
+.ricevuto{
+    background-color: white;
+    left:7%;
+}
+.inviato{
+    background-color: rgb(220, 248, 197);
+    left:60%;
+}
+.inviato, .ricevuto{
+    width: 250px;
+    position: relative;
+    margin: 10px 0;
+    padding: 0 5px;
+    padding-top: 15px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.data{
+    color: lightgrey;
+    font-size: 15px;
+    text-align: end;
+}
+.fa-chevron-down:hover .menu{
+    display:block;
+}
+.menu{
+    display:none;
+    width: 150px;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 1px 0 1px grey;
+    border-radius:2px;
+    position:absolute;
+    z-index: 1;
+}
+.info{
+    padding-bottom:10px;
+
+}
