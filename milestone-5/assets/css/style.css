@@ -112,7 +112,7 @@ input{
 
 /* contatti */
 .contatti{
-    max-height:62%;
+    height:62%;
     overflow-y: scroll;
     background-color:white;
 }
