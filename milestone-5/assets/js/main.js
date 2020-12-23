@@ -170,19 +170,22 @@ let app = new Vue({
     
 
     methods:{
+        // al click sulla lista dei contatti si attiva la chat con il contatto selezionato
         avviaChat(contatto){
            this.chatAttiva.splice(0,1,contatto);
-           console.log(this.chatAttiva);
+           //console.log(this.chatAttiva);
            //console.log(contatto);
         },
-
+        // serve per inviare il testo scritto nell'input in basso
         invia(){
             this.chatAttiva[0].messages.push({text:this.nuovoMes, status:'sent', date:(`${dayjs().format('DD/MM/YYYY')} ${dayjs().format('H:mm:ss')}`)}), this.nuovoMes= "";
             setTimeout(this.rispondi, 1000)
         },
+        //il programma rispondera ok dopo un secondo dal messaggio inviato 
         rispondi(){
             this.chatAttiva[0].messages.push({text:'ok', status:'received', date:(`${dayjs().format('DD/MM/YYYY')} ${dayjs().format('H:mm:ss')}`)});   
         },
+        //ricerca contatti che contengono nel nome quello scritto nell'input
         ricerca(){
             this.contatti.forEach(element => {
                 //console.log(element);
@@ -194,6 +197,7 @@ let app = new Vue({
                 //console.log(element.name.includes(this.cercaNome));
             });
         },
+        //al click elimina il messaggio
         cancella(index){
             for (let i = 0; i < this.chatAttiva.length; i++) {
             this.chatAttiva[i].messages.splice(index,1)

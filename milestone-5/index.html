@@ -61,34 +61,52 @@
                         </aside>
                         <!-- /aside -->
 
+                        <!-- container generale chat -->
                         <div class="chat_container d_flex">
+                            <!-- container dell'utente in chat -->
                             <div class="utente_chat_container">
                                 <div class="utente_chat d_flex" v-for="contatto in chatAttiva">
                                     <span class=" contatto_accesso d_flex">
+                                        <!-- immagine dell'utente in chat -->
                                         <img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt="">
+                                        <!-- /immagine dell'utente in chat -->
+                                        <!-- nome e ultima data di accesso dell'utente -->
                                         <div class="d_flex">
                                             <h3>{{contatto.name}}</h3>
                                             <span v-for="(messaggio, index) in contatto.messages" v-if="index == (contatto.messages.length -1)">Ultimo accesso {{messaggio.date}}</span>
                                         </div>
+                                        <!-- /nome e ultima data di accesso dell'utente -->
                                     </span>
+                                    <!-- icone barra della chat attiva -->
                                     <span><i class="fas fa-search"></i><i class="fas fa-paperclip"></i> <i class="fas fa-ellipsis-v"></i></span>
+                                    <!-- /icone barra della chat attiva -->                      
                                 </div>
                             </div>
+                            <!-- /container dell'utente in chat -->
+                            <!-- chat -->
                             <div class="chat">
                                 <div v-for="contatto in chatAttiva">
+                                    <!-- lista messaggi di default -->
                                     <template v-for="(messaggio,index) in contatto.messages">
                                         <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}} <i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div>
                                         <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div><br>
                                     </template>
+                                    <!-- /lista messaggi di default -->
+                                    <!-- nuovo messaggio -->
                                     {{nuovoMes.text}}
+                                    <!-- /nuovo messaggio -->
                                 </div>
                             </div>
+                            <!-- /chat -->
+                            <!-- barra grigia in basso dove ci sono icone e un input -->
                             <div class="messaggio d_flex">
                                 <i class="far fa-smile"></i>
                                 <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMes" @keyup.enter="invia">
                                 <i class="fas fa-microphone"></i>
                             </div>
+                            <!-- /barra grigia in basso dove ci sono icone e un input -->
                         </div>
+                        <!-- /container generale chat -->
 
                 </div>
             </div>
