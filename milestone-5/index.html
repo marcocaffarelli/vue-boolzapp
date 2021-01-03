@@ -88,8 +88,8 @@
                                 <div v-for="contatto in chatAttiva">
                                     <!-- lista messaggi di default -->
                                     <template v-for="(messaggio,index) in contatto.messages">
-                                        <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}} <i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div>
-                                        <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<i class="fas fa-chevron-down" > <div class="menu"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div><br>
+                                        <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}} <i class="fas fa-chevron-down" @click="appari"> <div class="menu" v-show="presente"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div>
+                                        <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<i class="fas fa-chevron-down" @click="appari"> <div class="menu" v-show="presente"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div><br>
                                     </template>
                                     <!-- /lista messaggi di default -->
                                     <!-- nuovo messaggio -->

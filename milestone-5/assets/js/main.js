@@ -187,6 +187,7 @@ let app = new Vue({
 
         cercaNome:"",
 
+        presente: false,
     },
     
 
@@ -196,6 +197,7 @@ let app = new Vue({
            this.chatAttiva.splice(0,1,contatto);
            //console.log(this.chatAttiva);
            //console.log(contatto);
+           this.contatto
         },
         // serve per inviare il testo scritto nell'input in basso
         invia(){
@@ -218,7 +220,14 @@ let app = new Vue({
                 //console.log(element.name.includes(this.cercaNome));
             });
         },
-
+        //al click appare il menu e con un secondo click scompare
+        appari(){
+            if (this.presente === false) {
+                this.presente = true
+            }else{
+                this.presente = false
+            }
+        },
         //al click elimina il messaggio
         cancella(index){
             for (let i = 0; i < this.chatAttiva.length; i++) {

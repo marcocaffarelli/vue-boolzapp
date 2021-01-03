@@ -222,11 +222,8 @@ div .chat_container{
 .ricevuto:hover .fa-chevron-down, .inviato:hover .fa-chevron-down{
     display:inline-block;
 }
-.fa-chevron-down:hover .menu{
-    display:block;
-}
+
 .menu{
-    display:none;
     width: 150px;
     background-color: white;
     padding: 15px;
