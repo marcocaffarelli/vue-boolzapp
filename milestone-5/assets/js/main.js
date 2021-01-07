@@ -15,17 +15,20 @@ let app = new Vue({
                 {
                 date: '10/01/2020 15:30:55',
                 text: 'Hai portato a spasso il cane?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '10/01/2020 15:50:00',
                 text: 'Ricordati di dargli da mangiare',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '10/01/2020 16:15:22',
                 text: 'Tutto fatto!',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -37,17 +40,20 @@ let app = new Vue({
                 {
                 date: '20/03/2020 16:30:00',
                 text: 'Ciao come stai?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '20/03/2020 16:30:55',
                 text: 'Bene grazie! Stasera ci vediamo?',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 },
                 {
                 date: '20/03/2020 16:35:00',
                 text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 }
                 ],
             },
@@ -59,17 +65,20 @@ let app = new Vue({
                 {
                 date: '28/03/2020 10:10:40',
                 text: 'La Marianna va in campagna',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 },
                 {
                 date: '28/03/2020 10:20:10',
                 text: 'Sicuro di non aver sbagliato chat?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '28/03/2020 16:15:22',
                 text: 'Ah scusa!',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -81,12 +90,14 @@ let app = new Vue({
                 {
                 date: '10/01/2020 15:30:55',
                 text: 'Lo sai che ha aperto una nuova pizzeria?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '10/01/2020 15:50:00',
                 text: 'Si, ma preferirei andare al cinema',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -98,12 +109,14 @@ let app = new Vue({
                 {
                 date: '18/05/2020 16:40:56',
                 text: 'Speriamo smetta di nevicare',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '18/05/2020 16:45:01',
                 text: 'Se fosse per me farei nevicare sempre',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -115,12 +128,14 @@ let app = new Vue({
                 {
                 date: '07/09/2020 00:00:05',
                 text: 'Cosa possiamo regalare a Chiara?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '08/09/2020 04:12:34',
                 text: 'Non lo so',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -132,12 +147,14 @@ let app = new Vue({
                 {
                 date: '10/12/2020 16:48:55',
                 text: 'Noooo!!! Come hai fatto a sbagliare?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '10/12/2020 17:05:08',
                 text: 'Avevo capito male :(',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -149,12 +166,14 @@ let app = new Vue({
                 {
                 date: '13/12/2020 23:22:25',
                 text: 'Come va?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '13/12/2020 23:59:59',
                 text: 'Va',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -168,17 +187,20 @@ let app = new Vue({
                 {
                 date: '10/01/2020 15:30:55',
                 text: 'Hai portato a spasso il cane?',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '10/01/2020 15:50:00',
                 text: 'Ricordati di dargli da mangiare',
-                status: 'sent'
+                status: 'sent',
+                isActive: false,
                 },
                 {
                 date: '10/01/2020 16:15:22',
                 text: 'Tutto fatto!',
-                status: 'received'
+                status: 'received',
+                isActive: false,
                 }
                 ],
             },
@@ -188,6 +210,10 @@ let app = new Vue({
         cercaNome:"",
 
         presente: false,
+
+        cercaMessaggio:"",
+
+        visibile:"",
     },
     
 
@@ -234,6 +260,24 @@ let app = new Vue({
             this.chatAttiva[i].messages.splice(index,1)
             
             }              
-        }
+        },
+        appariRicerca(){
+            if (this.visibile === false) {
+                this.visibile = true
+            }else{
+                this.visibile = false
+            }
+        },
+
+        ricercaChat(){
+            this.chatAttiva[0].messages.forEach(element => {
+                //console.log(element);
+                if(element.text.toLowerCase().includes(this.cercaMessaggio.toLowerCase() || this.cercaMessaggio ==! "")){
+                    element.isActive = true 
+                }else{
+                    element.isActive = false
+                }
+            });     
+    }
     }
 });

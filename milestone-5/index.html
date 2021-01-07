@@ -53,7 +53,12 @@
                             <!-- contatti -->
                             <div class="contatti">
                                 <ul>
-                                    <li v-for="(contatto, index) in contatti" @click="avviaChat(contatto)" v-if="contatto.visible"><img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}<div class="ultimo" v-for="(messaggio, index) in contatto.messages" v-if="index == (contatto.messages.length -1)">{{messaggio.text}} <div>{{messaggio.date}}</div></div></li>
+                                    <li v-for="(contatto, index) in contatti" @click="avviaChat(contatto)" v-if="contatto.visible">
+                                        <img :src="`assets/img/avatar${contatto.avatar}.jpg`" alt=""> {{contatto.name}}
+                                        <div class="ultimo" v-for="(messaggio, index) in contatto.messages" v-if="index == (contatto.messages.length -1)">{{messaggio.text}} 
+                                            <div>{{messaggio.date}}</div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             <!-- /contatti -->
@@ -78,7 +83,12 @@
                                         <!-- /nome e ultima data di accesso dell'utente -->
                                     </span>
                                     <!-- icone barra della chat attiva -->
-                                    <span><i class="fas fa-search"></i><i class="fas fa-paperclip"></i> <i class="fas fa-ellipsis-v"></i></span>
+                                    <span>
+                                        <i class="fas fa-search" @click="appariRicerca"></i>
+                                        <input id="ricerca_testo" type="search" v-show="visibile" v-model="cercaMessaggio" @keyup="ricercaChat" placeholder="Cerca...">
+                                        <i class="fas fa-paperclip"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
                                     <!-- /icone barra della chat attiva -->                      
                                 </div>
                             </div>
@@ -88,8 +98,24 @@
                                 <div v-for="contatto in chatAttiva">
                                     <!-- lista messaggi di default -->
                                     <template v-for="(messaggio,index) in contatto.messages">
-                                        <div class="inviato"  v-if="messaggio.status === 'sent'">{{messaggio.text}} <i class="fas fa-chevron-down" @click="appari"> <div class="menu" v-show="presente"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div>
-                                        <div class="ricevuto"  v-else="messaggio.status === 'received'">{{messaggio.text}}<i class="fas fa-chevron-down" @click="appari"> <div class="menu" v-show="presente"><div class="info">Message info</div><div class="delete" @click="cancella(index)">Delete message</div></div></i><br><div class="data">{{messaggio.date}}</div></div><br>
+                                        <div class="inviato"  v-if="messaggio.status === 'sent'" :class="{active: messaggio.isActive}">{{messaggio.text}} 
+                                            <i class="fas fa-chevron-down" @click="appari"> 
+                                                <div class="menu" v-show="presente">
+                                                    <div class="info">Message info</div>
+                                                    <div class="delete" @click="cancella(index)">Delete message</div>
+                                                </div>
+                                            </i><br>
+                                            <div class="data">{{messaggio.date}}</div>
+                                        </div>
+                                        <div class="ricevuto"  v-else="messaggio.status === 'received'" :class="{active: messaggio.isActive}">{{messaggio.text}}
+                                            <i class="fas fa-chevron-down" @click="appari">
+                                                <div class="menu" v-show="presente">
+                                                    <div class="info">Message info</div>
+                                                    <div class="delete" @click="cancella(index)">Delete message</div>
+                                                </div>
+                                            </i><br>
+                                            <div class="data">{{messaggio.date}}</div>
+                                        </div><br>
                                     </template>
                                     <!-- /lista messaggi di default -->
                                     <!-- nuovo messaggio -->

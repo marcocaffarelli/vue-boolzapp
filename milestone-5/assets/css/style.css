@@ -137,8 +137,23 @@ li> img{
     vertical-align: top;
     margin-right: 20px;
 }
+.ultimo{
+    width:74%;
+    color:grey;
+    font-size: 16px;
+    position:absolute;
+    left: 105px;
+    top: 40px;
+}
+.ultimo > div{
+    position:relative;
+    bottom: 40px;
+    text-align: end;
+}
 
-/***************************CHAT***************************/
+/***************************CONTAINER GENERALE CHAT***************************/
+
+/* container dell'utente in chat */
 div .chat_container{
     background-image: url(../img/mine.jpg);
     height: 100%;
@@ -150,6 +165,7 @@ div .chat_container{
     background-color: rgb(234,234,234);
     height: 15%;
     width: 100%;
+    position: relative;
 }
 .utente_chat{
     height: 100%;
@@ -168,6 +184,17 @@ div .chat_container{
 .contatto_accesso div span{
     color: grey;
 }
+#ricerca_testo{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    right: 20%;
+    top:0;
+    background-color:  rgb(234,234,234); 
+    text-align: center;
+}
+
+/* Chat */
 .chat{
     height:70%;
     width: 100%;
@@ -210,6 +237,9 @@ div .chat_container{
     font-size: 20px;
     cursor: pointer;
 }
+.active{
+    background-color: yellow;
+}
 .inviato:hover{
     z-index: 1;
 }
@@ -241,19 +271,6 @@ div .chat_container{
     cursor: pointer;
 }
 .info{
-    padding-bottom:10px;
+    padding-bottom:10px;   
+}
 
-}
-.ultimo{
-    width:74%;
-    color:grey;
-    font-size: 16px;
-    position:absolute;
-    left: 105px;
-    top: 40px;
-}
-.ultimo > div{
-    position:relative;
-    bottom: 40px;
-    text-align: end;
-}
